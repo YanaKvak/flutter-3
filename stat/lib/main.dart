@@ -79,94 +79,97 @@ class FirstScreenContent extends StatelessWidget {
     return Stack(
       children: [
         Positioned.fill(
-          child: SvgPicture.asset(
-            'assets/images/page1.svg',
-            fit: BoxFit.cover,
+          child: Image.asset(
+            'assets/images/page1.png',
+            fit: BoxFit.fill,
+          ),
+        ),
+        const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Spacer(),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Итоги\n',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Steppe-Medium',
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Вашего\n',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 40,
+                        fontFamily: 'Steppe-Regular',
+                      ),
+                    ),
+                    TextSpan(
+                      text: '2024\n',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Steppe-Medium',
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'года',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 40,
+                        fontFamily: 'Steppe-Regular',
+                      ),
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Spacer(),
+              Column(
+                children: [
+                  Text(
+                    'Прокрутите вниз для продолжения',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w300,
+                      fontFamily: 'Steppe-Regular',
+                    ),
+                  ),
+                  Icon(
+                    Icons.arrow_circle_down_rounded,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                  SizedBox(height: 50),
+                ],
+              ),
+            ],
           ),
         ),
         Positioned(
-          right: 60,
-          top: 5,
-          child: Image.asset('assets/images/blueEllipse1.png',
-           height: 403,
-           width: 397,
-           fit: BoxFit.fill,
-            ),
+          top: 200,
+          right: 0,
+          child: Image.asset(
+            'assets/images/shoes.png',
+            fit: BoxFit.cover,
+            height: 300,
           ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 20),
-            Center(
-              child: SvgPicture.asset(
-                'assets/images/logo.svg',
-                height: 25,
-              ),
-            ),
-            const Spacer(),
-            const Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Итоги\n',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Steppe-Medium',
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'Вашего\n',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 40,
-                      fontFamily: 'Steppe-Regular',
-                    ),
-                  ),
-                  TextSpan(
-                    text: '2024\n',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Steppe-Medium',
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'года',
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 40,
-                      fontFamily: 'Steppe-Regular',
-                    ),
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Spacer(),
-            const Column(
-              children: [
-                Text(
-                  'Прокрутите вниз для продолжения',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
-                    fontFamily: 'Steppe-Regular',
-                  ),
-                ),
-                SizedBox(height: 10),
-                Icon(
-                  Icons.arrow_downward,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(height: 40), // Отступ снизу
-              ],
-            ),
-          ],
+        ),
+        Positioned(
+          top: 100,
+          left: 0,
+          child: Image.asset(
+            'assets/images/bottle.png',
+            fit: BoxFit.cover,
+            height: 200,
+          ),
         ),
       ],
     );
@@ -178,7 +181,6 @@ class HealthPointsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final TypedSkllzz userStats = TypedSkllzz(
       steps: 15000,
       hr: 3000,   
@@ -186,34 +188,14 @@ class HealthPointsScreen extends StatelessWidget {
 
     final numberFormatter = NumberFormat("#,###", "ru_RU");
 
-    return Container(
-      child: Stack(
+    return Scaffold(
+      body: Stack(
         clipBehavior: Clip.none,
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/page2.svg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned(
-            top: 160,
-            left: 70,
-            child: SvgPicture.asset(
-              'assets/images/line2.svg',
-              height: 180,
-              width: 200,
-              fit: BoxFit.contain,
-            ),
-          ),
-          Positioned(
-            bottom: 40,
-            right: 30,
-            child: SvgPicture.asset(
-              'assets/images/artif.svg',
-              height: 100,
-              width: 100,
-              fit: BoxFit.contain,
+            child: Image.asset(
+              'assets/images/page2.png',
+              fit: BoxFit.fill,
             ),
           ),
           Padding(
@@ -222,93 +204,94 @@ class HealthPointsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const FittedBox(
                   fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Баллы\nздоровья',
-                    style: TextStyle(
-                      fontSize: 38,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Steppe-Medium',
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 60.0),
+                    child: Text(
+                      'Баллы\nздоровья',
+                      style: TextStyle(
+                        fontSize: 38,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'Steppe-Medium',
+                      ),
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 40), // Отступ сверху
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              const TextSpan(
-                                text: 'На шагах: ',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontFamily: 'Steppe',
-                                ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const SizedBox(height: 40),
+                      RichText(
+                        textAlign: TextAlign.right,
+                        text: TextSpan(
+                          children: [
+                            const TextSpan(
+                              text: 'На шагах: ',
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontFamily: 'Steppe',
                               ),
-                              TextSpan(
-                                text: '${numberFormatter.format(userStats.steps)}',
-                                style: const TextStyle(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Steppe-Medium',
-                                ),
+                            ),
+                            TextSpan(
+                              text: '${numberFormatter.format(userStats.steps)}',
+                              style: const TextStyle(
+                                fontSize: 30,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Steppe-Medium',
                               ),
-                              const TextSpan(
-                                text: ' баллов',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontFamily: 'Steppe',
-                                ),
+                            ),
+                            const TextSpan(
+                              text: ' баллов',
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontFamily: 'Steppe',
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 4), // Пустое пространство между строками
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              const TextSpan(
-                                text: 'На тренировках: ',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontFamily: 'Steppe',
-                                ),
+                      ),
+                      const SizedBox(height: 4),
+                      RichText(
+                        textAlign: TextAlign.right,
+                        text: TextSpan(
+                          children: [
+                            const TextSpan(
+                              text: 'На тренировках: ',
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontFamily: 'Steppe',
                               ),
-                              TextSpan(
-                                text: '${numberFormatter.format(userStats.hr)}',
-                                style: const TextStyle(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Steppe-Medium',
-                                ),
+                            ),
+                            TextSpan(
+                              text: '${numberFormatter.format(userStats.hr)}',
+                              style: const TextStyle(
+                                fontSize: 30,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Steppe-Medium',
                               ),
-                              const TextSpan(
-                                text: ' баллов',
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontFamily: 'Steppe',
-                                ),
+                            ),
+                            const TextSpan(
+                              text: ' баллов',
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                                fontFamily: 'Steppe',
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
                 Align(
@@ -318,7 +301,7 @@ class HealthPointsScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color:  Colors.white,
+                        color: Colors.white,
                         width: 1,
                       ),
                     ),
@@ -378,11 +361,32 @@ class HealthPointsScreen extends StatelessWidget {
               ],
             ),
           ),
+          Positioned(
+            bottom: 60, 
+            left: 370,
+            child: Image.asset(
+              'assets/images/artif.png',
+              width: 100,
+              height: 100,
+              fit: BoxFit.contain,
+            ),
+          ),
+          Positioned(
+            top: 200,
+            left: 70,
+            child: Image.asset(
+              'assets/images/linePage2.png',
+              height: 130,
+              width: 200,
+              fit: BoxFit.contain,
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
 
 class TypedSkllzz {
   final int steps;
@@ -399,9 +403,10 @@ class ArtifactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // Фон
         Positioned.fill(
-          child: SvgPicture.asset(
-            'assets/images/page3.svg',
+          child: Image.asset(
+            'assets/images/page3.png',
             fit: BoxFit.cover,
           ),
         ),
@@ -420,7 +425,6 @@ class ArtifactScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 100),
-
               Text(
                 '660',
                 style: TextStyle(
@@ -431,22 +435,43 @@ class ArtifactScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Text(
-                'баллов',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
-                  fontFamily: 'Steppe-Regular',
-                ),
-                textAlign: TextAlign.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'баллов',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontFamily: 'Steppe-Regular',
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                ],
               ),
             ],
+          ),
+        ),
+        Positioned(
+          right: 50,
+          top: 200,
+          child: Image.asset(
+            'assets/images/linePage3.png',
+            width: 150,
+            height: 150,
+            fit: BoxFit.contain,
           ),
         ),
       ],
     );
   }
 }
+
 ///!!!
 ///Четвертая страница шаги от и до
 enum DistanceTypes {
@@ -500,8 +525,8 @@ class AdditionalInfoScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/page4.svg',
+            child: Image.asset(
+              'assets/images/page4.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -524,31 +549,31 @@ class AdditionalInfoScreen extends StatelessWidget {
                   ),
                 ),
                 const FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    'пройденных шагов',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Steppe-Regular',
-                    ),
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  'пройденных шагов',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Steppe-Regular',
                   ),
                 ),
-                const SizedBox(height: 30),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    'примерно ${km.toStringAsFixed(1)} км, а значит',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Steppe-Regular',
-                    ),
+              ),
+              const SizedBox(height: 30),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  'примерно ${km.toStringAsFixed(1)} км, а значит',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Steppe-Regular',
                   ),
                 ),
-                const SizedBox(height: 70),
+              ),
+              const SizedBox(height: 70),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -680,13 +705,13 @@ class FifthScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/page5.svg',
-              fit: BoxFit.fill,
+            child: Image.asset(
+              'assets/images/page5.png',
+              fit: BoxFit.cover,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -715,7 +740,15 @@ class FifthScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 150),
+                Positioned(
+                  child: Image.asset(
+                    'assets/images/linePage5.png',
+                    width: 120,
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                const SizedBox(height: 10),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -776,6 +809,7 @@ class FifthScreen extends StatelessWidget {
     );
   }
 }
+
 ///!!!
 ///Последний экран со статистикой 
 class SixthScreen extends StatelessWidget {
@@ -790,19 +824,9 @@ class SixthScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: SvgPicture.asset(
-              'assets/images/page6.svg',
-              fit: BoxFit.fill,
-            ),
-          ),
-          Positioned(
-          right: 60,
-          top: 5,
-          child: Image.asset(
-          'assets/images/EllipseWhite6.png',
-           height: 403,
-           width: 397,
-           fit: BoxFit.contain,
+            child: Image.asset(
+              'assets/images/page6.png',
+              fit: BoxFit.cover,
             ),
           ),
           Padding(
@@ -823,12 +847,11 @@ class SixthScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 10),
                 Stack(
                   alignment: Alignment.center,
                   children: [
                     Text(
-                      '${userPerformance.toStringAsFixed(0)}%',
+                      '${userPerformance.toStringAsFixed(0)}% ',
                       style: const TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,
@@ -850,7 +873,7 @@ class SixthScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 160),
+                const SizedBox(height: 200),
                 const FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
